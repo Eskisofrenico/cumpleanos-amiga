@@ -1,0 +1,197 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .app {
+    padding: 15px;
+    padding-top: max(75px, calc(var(--safe-area-top) + 20px));
+    padding-bottom: max(20px, calc(var(--safe-area-bottom) + 15px));
+    align-items: flex-start;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .app {
+    padding: 12px;
+    padding-top: max(70px, calc(var(--safe-area-top) + 18px));
+    padding-bottom: max(18px, calc(var(--safe-area-bottom) + 12px));
+    align-items: flex-start;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños (375x812) */
+@media (max-width: 374px) and (min-height: 667px) {
+  .app {
+    padding: 10px;
+    padding-top: max(65px, calc(var(--safe-area-top) + 15px));
+    padding-bottom: max(15px, calc(var(--safe-area-bottom) + 10px));
+    align-items: flex-start;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Móviles generales en portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+  .app {
+    padding: 10px;
+    padding-top: max(70px, calc(var(--safe-area-top) + 10px));
+    padding-bottom: max(10px, calc(var(--safe-area-bottom) + 10px));
+    align-items: flex-start;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .app {
+    padding: 8px;
+    padding-top: max(60px, calc(var(--safe-area-top) + 10px));
+    padding-bottom: max(12px, calc(var(--safe-area-bottom) + 8px));
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 12px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .app {
+    padding: 10px;
+    padding-top: max(15px, calc(var(--safe-area-top) + 5px));
+    padding-bottom: max(10px, calc(var(--safe-area-bottom) + 5px));
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden !important;
+  }
+
+  .game-container {
+    gap: 10px;
+    max-width: 90%;
+  }
+}
+
+/* Tablets en portrait */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .app {
+    padding: 30px;
+  }
+
+  .game-container {
+    gap: 25px;
+    max-width: 650px;
+  }
+}
+
+/* Tablets en landscape */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .app {
+    padding: 25px;
+  }
+
+  .game-container {
+    gap: 22px;
+    max-width: 700px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .app {
+    padding: 40px;
+  }
+
+  .game-container {
+    gap: 25px;
+    max-width: 750px;
+  }
+}
+
+/* Ajuste especial para pantallas muy altas */
+@media (min-height: 900px) and (max-width: 768px) {
+  .app {
+    padding-top: max(90px, calc(var(--safe-area-top) + 25px));
+  }
+}
+
+/* Prevenir scroll horizontal y vertical no deseado */
+@media (max-width: 768px) {
+  .app {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    max-width: 100vw;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+  
+  .game-container {
+    overflow: visible;
+    max-width: 100vw;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

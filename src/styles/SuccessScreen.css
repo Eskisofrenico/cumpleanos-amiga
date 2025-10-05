@@ -1,0 +1,550 @@
+.success-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.success-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 30px;
+  padding: 60px 50px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.success-icon-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 35px;
+}
+
+.success-icon-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+}
+
+.success-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid;
+  z-index: 1;
+}
+
+.success-heading {
+  font-size: 56px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.success-divider {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+  border-radius: 2px;
+  margin: 0 auto 30px;
+}
+
+.success-text {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.success-activity {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.success-back-button {
+  padding: 16px 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #87CEEB, #FF7F7F);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.4);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 56px;
+}
+
+.success-back-button:hover {
+  box-shadow: 0 12px 35px rgba(135, 206, 235, 0.6);
+}
+
+.success-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 30px;
+  filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.6));
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .success-screen {
+    padding: 18px;
+  }
+
+  .success-card {
+    padding: 48px 36px;
+    border-radius: 26px;
+    max-width: 100%;
+  }
+
+  .success-icon-container {
+    margin-bottom: 30px;
+  }
+
+  .success-icon-circle {
+    width: 145px;
+    height: 145px;
+  }
+
+  .success-ring {
+    width: 145px;
+    height: 145px;
+  }
+
+  .success-heading {
+    font-size: 48px;
+    margin-bottom: 22px;
+  }
+
+  .success-divider {
+    width: 110px;
+    margin-bottom: 26px;
+  }
+
+  .success-text {
+    font-size: 19px;
+    margin-bottom: 9px;
+  }
+
+  .success-activity {
+    font-size: 26px;
+    margin-bottom: 36px;
+  }
+
+  .success-back-button {
+    padding: 15px 46px;
+    font-size: 17px;
+    min-height: 54px;
+  }
+
+  .sparkle {
+    font-size: 27px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .success-screen {
+    padding: 16px;
+  }
+
+  .success-card {
+    padding: 44px 32px;
+    border-radius: 24px;
+    max-width: 100%;
+  }
+
+  .success-icon-container {
+    margin-bottom: 28px;
+  }
+
+  .success-icon-circle {
+    width: 138px;
+    height: 138px;
+  }
+
+  .success-ring {
+    width: 138px;
+    height: 138px;
+  }
+
+  .success-heading {
+    font-size: 46px;
+    margin-bottom: 20px;
+  }
+
+  .success-divider {
+    width: 105px;
+    margin-bottom: 24px;
+  }
+
+  .success-text {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .success-activity {
+    font-size: 25px;
+    margin-bottom: 34px;
+  }
+
+  .success-back-button {
+    padding: 14px 44px;
+    font-size: 17px;
+    min-height: 52px;
+  }
+
+  .sparkle {
+    font-size: 26px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .success-screen {
+    padding: 14px;
+  }
+
+  .success-card {
+    padding: 38px 26px;
+    border-radius: 22px;
+  }
+
+  .success-icon-container {
+    margin-bottom: 24px;
+  }
+
+  .success-icon-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .success-ring {
+    width: 125px;
+    height: 125px;
+  }
+
+  .success-heading {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+
+  .success-divider {
+    width: 95px;
+    margin-bottom: 22px;
+  }
+
+  .success-text {
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+
+  .success-activity {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+
+  .success-back-button {
+    padding: 13px 40px;
+    font-size: 16px;
+    min-height: 50px;
+  }
+
+  .sparkle {
+    font-size: 24px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .success-card {
+    padding: 40px 30px;
+    border-radius: 25px;
+  }
+
+  .success-icon-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .success-ring {
+    width: 130px;
+    height: 130px;
+  }
+
+  .success-heading {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .success-divider {
+    width: 100px;
+    margin-bottom: 25px;
+  }
+
+  .success-text {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .success-activity {
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+
+  .success-back-button {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+
+  .sparkle {
+    font-size: 24px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .success-screen {
+    padding: 12px;
+  }
+
+  .success-card {
+    padding: 34px 22px;
+    border-radius: 20px;
+  }
+
+  .success-icon-circle {
+    width: 115px;
+    height: 115px;
+  }
+
+  .success-ring {
+    width: 115px;
+    height: 115px;
+  }
+
+  .success-heading {
+    font-size: 38px;
+  }
+
+  .success-divider {
+    width: 90px;
+  }
+
+  .success-text {
+    font-size: 16px;
+  }
+
+  .success-activity {
+    font-size: 21px;
+    margin-bottom: 28px;
+  }
+
+  .success-back-button {
+    padding: 12px 36px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+
+  .sparkle {
+    font-size: 22px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .success-screen {
+    padding: 15px;
+  }
+
+  .success-card {
+    padding: 36px 40px;
+    max-width: 560px;
+  }
+
+  .success-icon-container {
+    margin-bottom: 24px;
+  }
+
+  .success-icon-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .success-ring {
+    width: 120px;
+    height: 120px;
+  }
+
+  .success-heading {
+    font-size: 40px;
+    margin-bottom: 18px;
+  }
+
+  .success-divider {
+    width: 100px;
+    margin-bottom: 22px;
+  }
+
+  .success-text {
+    font-size: 17px;
+  }
+
+  .success-activity {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+
+  .success-back-button {
+    padding: 13px 42px;
+    font-size: 16px;
+  }
+
+  .sparkle {
+    font-size: 24px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .success-card {
+    padding: 64px 54px;
+    max-width: 520px;
+  }
+
+  .success-icon-circle {
+    width: 165px;
+    height: 165px;
+  }
+
+  .success-ring {
+    width: 165px;
+    height: 165px;
+  }
+
+  .success-heading {
+    font-size: 58px;
+    margin-bottom: 26px;
+  }
+
+  .success-divider {
+    width: 125px;
+  }
+
+  .success-text {
+    font-size: 21px;
+  }
+
+  .success-activity {
+    font-size: 30px;
+    margin-bottom: 42px;
+  }
+
+  .success-back-button {
+    padding: 17px 52px;
+    font-size: 19px;
+    min-height: 58px;
+  }
+
+  .sparkle {
+    font-size: 32px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .success-card {
+    padding: 70px 60px;
+    max-width: 540px;
+  }
+
+  .success-icon-circle {
+    width: 170px;
+    height: 170px;
+  }
+
+  .success-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .success-heading {
+    font-size: 60px;
+    margin-bottom: 28px;
+  }
+
+  .success-divider {
+    width: 130px;
+    margin-bottom: 32px;
+  }
+
+  .success-text {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .success-activity {
+    font-size: 32px;
+    margin-bottom: 46px;
+  }
+
+  .success-back-button {
+    padding: 18px 56px;
+    font-size: 20px;
+    min-height: 60px;
+  }
+
+  .sparkle {
+    font-size: 34px;
+  }
+}
+
+/* Mejora del botón en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .success-back-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Optimización de animaciones en móviles */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .sparkle {
+    animation: none;
+  }
+}

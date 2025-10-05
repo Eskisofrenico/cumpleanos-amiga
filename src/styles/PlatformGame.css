@@ -1,0 +1,634 @@
+.platform-game-container {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-instructions h2 {
+  font-size: 42px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #98D8C8, #87CEEB, #FF7F7F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.game-instructions p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.controls-info {
+  background: rgba(135, 206, 235, 0.1);
+  padding: 20px 40px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.controls-info p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0;
+  color: #333;
+}
+
+.start-game-button {
+  padding: 15px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #87CEEB, #FF7F7F);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 50px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .start-game-button:hover {
+    box-shadow: 0 12px 30px rgba(135, 206, 235, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.start-game-button:active {
+  transform: scale(0.95);
+}
+
+.game-hud {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hearts-counter {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FF7F7F;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.height-indicator {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #87CEEB;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background: linear-gradient(180deg, #87CEEB 0%, #98D8C8 100%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.game-world {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  will-change: transform;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 50px,
+      transparent 50px,
+      transparent 100px
+    );
+  transform-origin: top left;
+}
+
+.platform {
+  position: absolute;
+  background: linear-gradient(135deg, #98D8C8, #87CEEB);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.player {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.player svg {
+  width: 100%;
+  height: 100%;
+}
+
+.heart-collectible {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 8px rgba(255, 127, 127, 0.6));
+  pointer-events: none;
+}
+
+.goal {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.8));
+  pointer-events: none;
+}
+
+.mobile-hint {
+  color: #87CEEB;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .platform-game-container {
+    max-width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 160px);
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .game-instructions h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .game-instructions p {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .controls-info {
+    padding: 16px 28px;
+    margin: 16px 0;
+  }
+
+  .controls-info p {
+    font-size: 15px;
+  }
+
+  .start-game-button {
+    padding: 14px 40px;
+    font-size: 17px;
+  }
+
+  .game-hud {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .hearts-counter {
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  .height-indicator {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .game-area {
+    height: calc(100dvh - 280px);
+    min-height: 450px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    transform: scale(1.4);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+  }
+
+  .heart-collectible {
+    transform: scale(1.25);
+    filter: drop-shadow(0 4px 14px rgba(255, 127, 127, 0.8));
+  }
+
+  .goal {
+    transform: scale(1.25);
+    filter: drop-shadow(0 6px 18px rgba(255, 215, 0, 1));
+  }
+
+  .mobile-hint {
+    display: block !important;
+    font-size: 14px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .platform-game-container {
+    max-width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 150px);
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .game-instructions h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .game-instructions p {
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+
+  .controls-info {
+    padding: 15px 26px;
+    margin: 15px 0;
+  }
+
+  .controls-info p {
+    font-size: 14px;
+  }
+
+  .start-game-button {
+    padding: 13px 38px;
+    font-size: 16px;
+  }
+
+  .game-hud {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .hearts-counter {
+    padding: 9px 16px;
+    font-size: 15px;
+  }
+
+  .height-indicator {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .game-area {
+    height: calc(100dvh - 270px);
+    min-height: 420px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    transform: scale(1.35);
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+  }
+
+  .heart-collectible {
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 12px rgba(255, 127, 127, 0.8));
+  }
+
+  .goal {
+    transform: scale(1.2);
+    filter: drop-shadow(0 6px 16px rgba(255, 215, 0, 1));
+  }
+
+  .mobile-hint {
+    display: block !important;
+    font-size: 13px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .platform-game-container {
+    max-width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 140px);
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .game-instructions h2 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .game-instructions p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .controls-info {
+    padding: 14px 22px;
+    margin: 14px 0;
+  }
+
+  .controls-info p {
+    font-size: 13px;
+  }
+
+  .start-game-button {
+    padding: 12px 34px;
+    font-size: 15px;
+  }
+
+  .game-hud {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .hearts-counter {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .height-indicator {
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+
+  .game-area {
+    height: calc(100dvh - 260px);
+    min-height: 380px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    transform: scale(1.5);
+    filter: drop-shadow(0 7px 16px rgba(0, 0, 0, 0.6));
+  }
+
+  .heart-collectible {
+    transform: scale(1.3);
+    filter: drop-shadow(0 5px 14px rgba(255, 127, 127, 0.9));
+  }
+
+  .goal {
+    transform: scale(1.3);
+    filter: drop-shadow(0 7px 18px rgba(255, 215, 0, 1));
+  }
+
+  .mobile-hint {
+    display: block !important;
+    font-size: 12px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .platform-game-container {
+    max-width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 150px);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .game-instructions {
+    padding: 10px;
+  }
+
+  .game-instructions h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .game-instructions p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .controls-info {
+    padding: 15px 25px;
+    margin: 15px 0;
+  }
+
+  .controls-info p {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .start-game-button {
+    padding: 12px 35px;
+    font-size: 16px;
+  }
+
+  .game-hud {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .hearts-counter {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .height-indicator {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .game-area {
+    height: calc(100dvh - 270px);
+    min-height: 400px;
+    border-radius: 15px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+    transform: scale(1.3);
+  }
+
+  .heart-collectible {
+    filter: drop-shadow(0 4px 12px rgba(255, 127, 127, 0.8));
+    transform: scale(1.2);
+  }
+
+  .goal {
+    filter: drop-shadow(0 6px 16px rgba(255, 215, 0, 1));
+    transform: scale(1.2);
+  }
+
+  .mobile-hint {
+    display: block !important;
+    font-size: 13px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .platform-game-container {
+    padding: 10px;
+  }
+
+  .game-instructions h2 {
+    font-size: 22px;
+  }
+
+  .game-instructions p {
+    font-size: 14px;
+  }
+
+  .controls-info {
+    padding: 12px 18px;
+  }
+
+  .controls-info p {
+    font-size: 12px;
+  }
+
+  .start-game-button {
+    padding: 11px 28px;
+    font-size: 14px;
+  }
+
+  .hearts-counter {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+
+  .height-indicator {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    transform: scale(1.6);
+  }
+
+  .heart-collectible {
+    transform: scale(1.35);
+  }
+
+  .goal {
+    transform: scale(1.35);
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .platform-game-container {
+    max-width: 700px;
+    height: 500px;
+  }
+
+  .game-area {
+    height: 460px;
+  }
+
+  .game-world {
+    height: 560px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .platform-game-container {
+    height: 88vh;
+    height: 88dvh;
+    max-height: 500px;
+    padding: 12px;
+  }
+
+  .game-instructions h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .game-instructions p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .controls-info {
+    padding: 12px 20px;
+    margin: 12px 0;
+  }
+
+  .controls-info p {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  .start-game-button {
+    padding: 10px 30px;
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .game-area {
+    height: calc(100% - 20px);
+  }
+
+  .game-world {
+    height: 560px;
+  }
+
+  .player {
+    transform: scale(1.2);
+  }
+
+  .heart-collectible {
+    transform: scale(1.15);
+  }
+
+  .goal {
+    transform: scale(1.15);
+  }
+}

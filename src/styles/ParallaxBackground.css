@@ -1,0 +1,187 @@
+.parallax-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.parallax-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  will-change: transform;
+  animation: float 15s ease-in-out infinite;
+}
+
+.parallax-circle:nth-child(1) { 
+  animation-delay: 0s; 
+}
+
+.parallax-circle:nth-child(2) { 
+  animation-delay: 3s; 
+}
+
+.parallax-circle:nth-child(3) { 
+  animation-delay: 6s; 
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.03); 
+  }
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .parallax-circle {
+    filter: blur(55px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-18px) scale(1.025); 
+    }
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .parallax-circle {
+    filter: blur(50px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-16px) scale(1.02); 
+    }
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .parallax-circle {
+    filter: blur(45px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-14px) scale(1.02); 
+    }
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .parallax-circle {
+    filter: blur(50px);
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .parallax-circle {
+    filter: blur(40px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-12px) scale(1.015); 
+    }
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .parallax-circle {
+    filter: blur(45px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-15px) scale(1.02); 
+    }
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .parallax-circle {
+    filter: blur(65px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-22px) scale(1.035); 
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .parallax-circle {
+    filter: blur(70px);
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-25px) scale(1.04); 
+    }
+  }
+}
+
+/* Reducir animación para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-circle {
+    animation: none;
+    filter: blur(50px);
+  }
+}
+
+/* Optimización de rendimiento para móviles */
+@media (max-width: 768px) {
+  .parallax-background {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .parallax-circle {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Desactivar parallax en dispositivos de bajo rendimiento */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .parallax-circle {
+    animation: none;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,369 @@
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  overscroll-behavior: contain;
+}
+
+.confirmation-card {
+  background: white;
+  border-radius: 25px;
+  padding: 45px 35px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.confirmation-icon-wrapper {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.confirmation-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.confirmation-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.confirmation-subtitle {
+  font-size: 22px;
+  color: #666;
+  margin-bottom: 35px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.confirmation-btn {
+  flex: 1;
+  padding: 16px 25px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-height: 58px;
+}
+
+.confirmation-yes {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  color: white;
+}
+
+.confirmation-yes:hover {
+  box-shadow: 0 8px 25px rgba(102, 187, 106, 0.5);
+}
+
+.confirmation-no {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+  color: white;
+}
+
+.confirmation-no:hover {
+  box-shadow: 0 8px 25px rgba(239, 83, 80, 0.5);
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .confirmation-card {
+    padding: 40px 30px;
+    border-radius: 23px;
+    max-width: 94%;
+  }
+
+  .confirmation-icon-wrapper {
+    margin-bottom: 26px;
+  }
+
+  .confirmation-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .confirmation-title {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  .confirmation-btn {
+    padding: 15px 24px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .confirmation-card {
+    padding: 38px 28px;
+    border-radius: 22px;
+    max-width: 92%;
+  }
+
+  .confirmation-icon-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .confirmation-icon {
+    width: 95px;
+    height: 95px;
+  }
+
+  .confirmation-title {
+    font-size: 29px;
+    margin-bottom: 13px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 19px;
+    margin-bottom: 30px;
+  }
+
+  .confirmation-btn {
+    padding: 14px 22px;
+    font-size: 18px;
+    min-height: 54px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .confirmation-card {
+    padding: 34px 24px;
+    border-radius: 20px;
+    max-width: 90%;
+  }
+
+  .confirmation-icon-wrapper {
+    margin-bottom: 22px;
+  }
+
+  .confirmation-icon {
+    width: 88px;
+    height: 88px;
+  }
+
+  .confirmation-title {
+    font-size: 27px;
+    margin-bottom: 12px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+
+  .confirmation-actions {
+    gap: 12px;
+  }
+
+  .confirmation-btn {
+    padding: 13px 20px;
+    font-size: 17px;
+    min-height: 52px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .confirmation-card {
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+
+  .confirmation-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .confirmation-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .confirmation-btn {
+    padding: 14px 20px;
+    font-size: 18px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .confirmation-card {
+    padding: 30px 20px;
+  }
+
+  .confirmation-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .confirmation-title {
+    font-size: 25px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 17px;
+    margin-bottom: 26px;
+  }
+
+  .confirmation-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .confirmation-btn {
+    padding: 13px 20px;
+    font-size: 16px;
+    min-height: 50px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .confirmation-overlay {
+    padding: 15px;
+  }
+
+  .confirmation-card {
+    padding: 30px 32px;
+    max-width: 480px;
+  }
+
+  .confirmation-icon-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .confirmation-icon {
+    width: 85px;
+    height: 85px;
+  }
+
+  .confirmation-title {
+    font-size: 27px;
+    margin-bottom: 12px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 18px;
+    margin-bottom: 26px;
+  }
+
+  .confirmation-btn {
+    padding: 13px 22px;
+    font-size: 17px;
+    min-height: 52px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .confirmation-card {
+    padding: 48px 38px;
+    max-width: 440px;
+  }
+
+  .confirmation-icon {
+    width: 115px;
+    height: 115px;
+  }
+
+  .confirmation-title {
+    font-size: 36px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 23px;
+    margin-bottom: 38px;
+  }
+
+  .confirmation-btn {
+    padding: 17px 28px;
+    font-size: 21px;
+    min-height: 60px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .confirmation-card {
+    padding: 50px 40px;
+    max-width: 460px;
+  }
+
+  .confirmation-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .confirmation-title {
+    font-size: 38px;
+    margin-bottom: 18px;
+  }
+
+  .confirmation-subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .confirmation-btn {
+    padding: 18px 30px;
+    font-size: 22px;
+    min-height: 62px;
+  }
+}
+
+/* Mejora del botón en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .confirmation-btn:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Prevenir scroll del body cuando el modal está activo */
+@media (max-width: 768px) {
+  .confirmation-overlay {
+    -webkit-overflow-scrolling: touch;
+  }
+}

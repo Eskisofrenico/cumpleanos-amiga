@@ -1,0 +1,363 @@
+.question-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: none;
+  max-width: 700px;
+  width: 100%;
+  will-change: transform, opacity;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.question-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: 15px;
+  font-size: 18px;
+  color: #333;
+  text-align: left;
+  transition: all 0.2s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 72px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .option-button:hover:not(:disabled) {
+    border-color: #87CEEB;
+    background: rgba(135, 206, 235, 0.1);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
+  }
+}
+
+.option-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.option-id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #98D8C8, #87CEEB);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+.option-button.correct {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+  animation: correctPulse 0.4s ease;
+}
+
+.option-button.incorrect {
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+  animation: shake 0.4s ease;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+}
+
+@keyframes correctPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .question-container {
+    padding: 36px 24px;
+    border-radius: 26px;
+    max-width: 100%;
+  }
+
+  .question-text {
+    font-size: 26px;
+    margin-bottom: 36px;
+    line-height: 1.35;
+  }
+
+  .options-grid {
+    gap: 14px;
+  }
+
+  .option-button {
+    padding: 19px 22px;
+    font-size: 17px;
+    min-height: 70px;
+  }
+
+  .option-id {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .question-container {
+    padding: 34px 22px;
+    border-radius: 24px;
+    max-width: 100%;
+  }
+
+  .question-text {
+    font-size: 25px;
+    margin-bottom: 34px;
+    line-height: 1.35;
+  }
+
+  .options-grid {
+    gap: 13px;
+  }
+
+  .option-button {
+    padding: 18px 20px;
+    font-size: 17px;
+    min-height: 68px;
+  }
+
+  .option-id {
+    width: 33px;
+    height: 33px;
+    font-size: 15px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .question-container {
+    padding: 30px 18px;
+    border-radius: 22px;
+  }
+
+  .question-text {
+    font-size: 23px;
+    margin-bottom: 30px;
+    line-height: 1.3;
+  }
+
+  .options-grid {
+    gap: 12px;
+  }
+
+  .option-button {
+    padding: 16px 18px;
+    font-size: 16px;
+    min-height: 64px;
+  }
+
+  .option-id {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .question-container {
+    padding: 30px 20px;
+  }
+
+  .question-text {
+    font-size: 24px;
+  }
+
+  .option-button {
+    padding: 18px 20px;
+    font-size: 16px;
+    transition: all 0.15s ease;
+  }
+
+  .option-id {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .question-container {
+    padding: 26px 16px;
+    border-radius: 20px;
+  }
+
+  .question-text {
+    font-size: 21px;
+    margin-bottom: 26px;
+  }
+
+  .options-grid {
+    gap: 11px;
+  }
+
+  .option-button {
+    padding: 15px 16px;
+    font-size: 15px;
+    min-height: 60px;
+    gap: 12px;
+  }
+
+  .option-id {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .question-container {
+    padding: 28px 32px;
+    max-width: 680px;
+  }
+
+  .question-text {
+    font-size: 23px;
+    margin-bottom: 28px;
+  }
+
+  .options-grid {
+    gap: 12px;
+  }
+
+  .option-button {
+    padding: 16px 20px;
+    font-size: 16px;
+    min-height: 62px;
+  }
+
+  .option-id {
+    width: 31px;
+    height: 31px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .question-container {
+    padding: 44px;
+    max-width: 680px;
+  }
+
+  .question-text {
+    font-size: 30px;
+    margin-bottom: 42px;
+  }
+
+  .options-grid {
+    gap: 16px;
+  }
+
+  .option-button {
+    padding: 22px 28px;
+    font-size: 19px;
+    min-height: 76px;
+  }
+
+  .option-id {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .question-container {
+    padding: 48px;
+    max-width: 720px;
+  }
+
+  .question-text {
+    font-size: 32px;
+    margin-bottom: 46px;
+  }
+
+  .options-grid {
+    gap: 18px;
+  }
+
+  .option-button {
+    padding: 24px 30px;
+    font-size: 20px;
+    min-height: 80px;
+  }
+
+  .option-id {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Mejora de accesibilidad táctil */
+@media (max-width: 768px) {
+  .option-button {
+    touch-action: manipulation;
+  }
+  
+  .option-button:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+/* Animaciones más rápidas en móviles */
+@media (max-width: 768px) {
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+  }
+  
+  @keyframes correctPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+}

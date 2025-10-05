@@ -1,0 +1,255 @@
+.gameover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+.gameover-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #FF7F7F;
+  margin-bottom: 20px;
+}
+
+.gameover-text {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.restart-button {
+  padding: 15px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #FF7F7F, #87CEEB);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 127, 127, 0.4);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 54px;
+  min-width: 180px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .restart-button:hover {
+    box-shadow: 0 12px 30px rgba(255, 127, 127, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.restart-button:active {
+  transform: scale(0.95);
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .gameover-container {
+    padding: 44px 28px;
+    border-radius: 26px;
+    max-width: 100%;
+  }
+
+  .gameover-title {
+    font-size: 48px;
+    margin-bottom: 18px;
+  }
+
+  .gameover-text {
+    font-size: 19px;
+    margin-bottom: 36px;
+    line-height: 1.55;
+  }
+
+  .restart-button {
+    padding: 14px 46px;
+    font-size: 17px;
+    min-height: 52px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .gameover-container {
+    padding: 42px 26px;
+    border-radius: 24px;
+    max-width: 100%;
+  }
+
+  .gameover-title {
+    font-size: 46px;
+    margin-bottom: 18px;
+  }
+
+  .gameover-text {
+    font-size: 18px;
+    margin-bottom: 34px;
+    line-height: 1.55;
+  }
+
+  .restart-button {
+    padding: 13px 44px;
+    font-size: 17px;
+    min-height: 50px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .gameover-container {
+    padding: 38px 22px;
+    border-radius: 22px;
+  }
+
+  .gameover-title {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+
+  .gameover-text {
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .restart-button {
+    padding: 12px 40px;
+    font-size: 16px;
+    min-height: 48px;
+    min-width: 160px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .gameover-container {
+    padding: 40px 24px;
+  }
+
+  .gameover-title {
+    font-size: 44px;
+  }
+
+  .gameover-text {
+    font-size: 18px;
+  }
+
+  .restart-button {
+    padding: 12px 42px;
+    font-size: 16px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .gameover-container {
+    padding: 34px 20px;
+    border-radius: 20px;
+  }
+
+  .gameover-title {
+    font-size: 38px;
+    margin-bottom: 15px;
+  }
+
+  .gameover-text {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .restart-button {
+    padding: 11px 36px;
+    font-size: 15px;
+    min-height: 46px;
+    min-width: 150px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .gameover-container {
+    padding: 36px 40px;
+    max-width: 560px;
+  }
+
+  .gameover-title {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+
+  .gameover-text {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+
+  .restart-button {
+    padding: 12px 42px;
+    font-size: 16px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gameover-container {
+    padding: 54px;
+    max-width: 580px;
+  }
+
+  .gameover-title {
+    font-size: 58px;
+    margin-bottom: 22px;
+  }
+
+  .gameover-text {
+    font-size: 21px;
+    margin-bottom: 42px;
+  }
+
+  .restart-button {
+    padding: 16px 52px;
+    font-size: 19px;
+    min-height: 56px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .gameover-container {
+    padding: 60px;
+    max-width: 640px;
+  }
+
+  .gameover-title {
+    font-size: 60px;
+    margin-bottom: 24px;
+  }
+
+  .gameover-text {
+    font-size: 22px;
+    margin-bottom: 46px;
+  }
+
+  .restart-button {
+    padding: 17px 56px;
+    font-size: 20px;
+    min-height: 58px;
+    min-width: 200px;
+  }
+}
+
+/* Mejora del botón en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .restart-button:active {
+    transform: scale(0.93);
+    transition: transform 0.1s ease;
+  }
+}

@@ -1,0 +1,252 @@
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  box-shadow: none;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.welcome-screen h1 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #98D8C8, #87CEEB, #FF7F7F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.welcome-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.start-button {
+  padding: 15px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #87CEEB, #FF7F7F);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 54px;
+  min-width: 160px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .start-button:hover {
+    box-shadow: 0 12px 30px rgba(135, 206, 235, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.start-button:active {
+  transform: scale(0.95);
+}
+
+/* iPhone 13 Pro Max (428x926) */
+@media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
+  .welcome-screen {
+    padding: 38px 26px;
+    border-radius: 26px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .welcome-screen h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+
+  .welcome-subtitle {
+    font-size: 19px;
+    margin-bottom: 36px;
+    line-height: 1.55;
+  }
+
+  .start-button {
+    padding: 14px 46px;
+    font-size: 17px;
+    min-height: 52px;
+  }
+}
+
+/* iPhone 13 / 13 Pro (390x844) */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .welcome-screen {
+    padding: 36px 24px;
+    border-radius: 24px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .welcome-screen h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .welcome-subtitle {
+    font-size: 18px;
+    margin-bottom: 34px;
+    line-height: 1.5;
+  }
+
+  .start-button {
+    padding: 13px 44px;
+    font-size: 17px;
+    min-height: 50px;
+  }
+}
+
+/* iPhone 13 Mini y dispositivos pequeños */
+@media (max-width: 374px) and (min-height: 667px) {
+  .welcome-screen {
+    padding: 32px 20px;
+    border-radius: 22px;
+    margin: 0 auto;
+  }
+
+  .welcome-screen h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .welcome-subtitle {
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .start-button {
+    padding: 12px 40px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* Móviles generales */
+@media (max-width: 768px) and (orientation: portrait) {
+  .welcome-screen {
+    padding: 30px 20px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+  }
+
+  .welcome-screen h1 {
+    font-size: 36px;
+  }
+
+  .welcome-subtitle {
+    font-size: 18px;
+  }
+
+  .start-button {
+    padding: 12px 40px;
+    font-size: 16px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+  .welcome-screen {
+    padding: 26px 18px;
+    border-radius: 20px;
+  }
+
+  .welcome-screen h1 {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .welcome-subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .start-button {
+    padding: 11px 36px;
+    font-size: 15px;
+    min-height: 46px;
+  }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .welcome-screen {
+    padding: 28px 34px;
+    max-width: 560px;
+  }
+
+  .welcome-screen h1 {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .welcome-subtitle {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .start-button {
+    padding: 12px 42px;
+    font-size: 16px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .welcome-screen {
+    padding: 44px;
+    max-width: 580px;
+  }
+
+  .welcome-screen h1 {
+    font-size: 50px;
+  }
+
+  .welcome-subtitle {
+    font-size: 21px;
+  }
+
+  .start-button {
+    padding: 16px 52px;
+    font-size: 19px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .welcome-screen {
+    padding: 50px;
+    max-width: 640px;
+  }
+
+  .welcome-screen h1 {
+    font-size: 52px;
+    margin-bottom: 24px;
+  }
+
+  .welcome-subtitle {
+    font-size: 22px;
+    margin-bottom: 44px;
+  }
+
+  .start-button {
+    padding: 17px 56px;
+    font-size: 20px;
+    min-height: 58px;
+  }
+}
