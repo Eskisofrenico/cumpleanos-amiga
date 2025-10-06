@@ -7,7 +7,31 @@
   max-width: 800px;
   width: 100%;
   text-align: center;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90vh;
+  max-height: 90dvh;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(135, 206, 235, 0.6) rgba(135, 206, 235, 0.1);
+}
+
+.final-message-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.final-message-container::-webkit-scrollbar-track {
+  background: rgba(135, 206, 235, 0.1);
+  border-radius: 10px;
+}
+
+.final-message-container::-webkit-scrollbar-thumb {
+  background: rgba(135, 206, 235, 0.6);
+  border-radius: 10px;
+}
+
+.final-message-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(135, 206, 235, 0.8);
 }
 
 .final-title {
@@ -251,7 +275,31 @@
   max-width: 900px;
   width: 100%;
   text-align: center;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90vh;
+  max-height: 90dvh;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(135, 206, 235, 0.6) rgba(135, 206, 235, 0.1);
+}
+
+.activities-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.activities-container::-webkit-scrollbar-track {
+  background: rgba(135, 206, 235, 0.1);
+  border-radius: 10px;
+}
+
+.activities-container::-webkit-scrollbar-thumb {
+  background: rgba(135, 206, 235, 0.6);
+  border-radius: 10px;
+}
+
+.activities-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(135, 206, 235, 0.8);
 }
 
 .activities-title {
@@ -551,6 +599,13 @@
     padding: 35px 22px;
     border-radius: 25px;
     max-width: 100%;
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .final-message-container::-webkit-scrollbar,
+  .activities-container::-webkit-scrollbar {
+    width: 6px;
   }
 
   .final-title {
@@ -648,6 +703,13 @@
     padding: 32px 20px;
     border-radius: 22px;
     max-width: 100%;
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .final-message-container::-webkit-scrollbar,
+  .activities-container::-webkit-scrollbar {
+    width: 6px;
   }
 
   .final-title {
@@ -836,6 +898,13 @@
   .confirmation-success-container {
     padding: 28px 16px;
     border-radius: 20px;
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .final-message-container::-webkit-scrollbar,
+  .activities-container::-webkit-scrollbar {
+    width: 5px;
   }
 
   .final-title {
@@ -1007,6 +1076,13 @@
     padding: 30px 20px;
     border-radius: 20px;
     max-width: 100%;
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .final-message-container::-webkit-scrollbar,
+  .activities-container::-webkit-scrollbar {
+    width: 6px;
   }
 
   .final-title {
@@ -1094,6 +1170,8 @@
 
   .activities-container {
     padding: 30px 20px;
+    max-height: 85vh;
+    max-height: 85dvh;
   }
 
   .activities-title {
@@ -1242,6 +1320,8 @@
   .final-message-container,
   .activities-container {
     padding: 25px 30px;
+    max-height: 88vh;
+    max-height: 88dvh;
   }
 
   .final-title {
@@ -1301,7 +1381,9 @@
 /* Mejora de scroll en modales para todos los móviles */
 @media (max-width: 768px) {
   .message-box,
-  .gift-modal-content {
+  .gift-modal-content,
+  .final-message-container,
+  .activities-container {
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
