@@ -1,5 +1,6 @@
 .success-screen {
-  position: relative;
+  position: fixed; /* ocupar todo el viewport y no heredar paddings del contenedor padre */
+  inset: 0;
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
@@ -8,6 +9,7 @@
   justify-content: center;
   padding: 20px;
   overflow: hidden;
+  z-index: 10;
 }
 
 .success-card {
@@ -18,7 +20,7 @@
   max-width: 500px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+  box-shadow: none; /* sin sombra para consistencia con el resto */
   z-index: 1;
 }
 

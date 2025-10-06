@@ -5,26 +5,24 @@
   bottom: -75px;
   width: 100%;
   max-width: 900px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* izquierda | salto (centro) | derecha */
+  column-gap: 28px;
   align-items: center;
   padding: 0 20px;
   z-index: 3000;
   pointer-events: none;
   margin: 0 auto;
 }
+.touch-controls .left { justify-self: start; }
+.touch-controls .jump { justify-self: center; }
+.touch-controls .right { justify-self: end; }
 
-.direction-controls {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  pointer-events: auto;
-}
 
-.jump-controls {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+/* Los botones reciben eventos, el contenedor no */
+.touch-controls .left,
+.touch-controls .right,
+.touch-controls .jump {
   pointer-events: auto;
 }
 
@@ -32,11 +30,15 @@
   width: 62px;
   height: 62px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.98);
-  border: 3px solid rgba(135, 206, 235, 0.85);
-  color: #222;
+  color: #1f2d3a;
   font-weight: 700;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, rgba(135,206,235,0.7), rgba(255,127,127,0.7));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.18);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,22 +55,25 @@
 }
 
 .control-button.jump {
-  width: 84px;
-  height: 62px;
-  border-radius: 31px;
-  font-size: 12px;
-  background: linear-gradient(135deg, #87CEEB, #FF7F7F);
-  color: #fff;
-  border: none;
+  width: 132px; /* más grande y centrado */
+  height: 70px;
+  border-radius: 38px;
+  font-size: 13px;
+  color: #1f2d3a;
   flex-direction: column;
-  gap: 3px;
-  box-shadow: 0 6px 26px rgba(255, 127, 127, 0.35);
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #87CEEB, #FF7F7F);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 10px 28px rgba(255, 127, 127, 0.35);
 }
 
 .control-button.jump span {
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
 }
 
 .control-button.jump:active {
@@ -88,6 +93,7 @@
   .touch-controls {
     bottom: -72px;
     padding: 0 22px;
+    column-gap: 32px;
   }
   
   .control-button {
@@ -95,10 +101,7 @@
     height: 64px;
   }
   
-  .control-button.jump {
-    width: 86px;
-    height: 64px;
-  }
+  .control-button.jump { width: 140px; height: 78px; }
 }
 
 /* iPhone 13 / 13 Pro (390x844) - OPTIMIZADO */
@@ -106,6 +109,7 @@
   .touch-controls {
     bottom: -70px;
     padding: 0 18px;
+    column-gap: 28px;
   }
   
   .direction-controls,
@@ -118,10 +122,7 @@
     height: 62px;
   }
   
-  .control-button.jump {
-    width: 84px;
-    height: 62px;
-  }
+  .control-button.jump { width: 132px; height: 74px; }
 }
 
 /* iPhone 13 Mini (375x812) */
@@ -129,6 +130,7 @@
   .touch-controls {
     bottom: -68px;
     padding: 0 16px;
+    column-gap: 26px;
   }
   
   .control-button {
@@ -136,10 +138,7 @@
     height: 60px;
   }
   
-  .control-button.jump {
-    width: 82px;
-    height: 60px;
-  }
+  .control-button.jump { width: 126px; height: 70px; }
 }
 
 /* Móviles generales en portrait */
@@ -147,6 +146,7 @@
   .touch-controls {
     bottom: -70px;
     padding: 0 18px;
+    column-gap: 26px;
   }
 }
 
@@ -155,6 +155,7 @@
   .touch-controls {
     bottom: -65px;
     padding: 0 14px;
+    column-gap: 22px;
   }
   
   .direction-controls,
@@ -167,10 +168,7 @@
     height: 56px;
   }
   
-  .control-button.jump {
-    width: 78px;
-    height: 56px;
-  }
+  .control-button.jump { width: 120px; height: 66px; }
 }
 
 /* Landscape en móviles */
@@ -178,6 +176,7 @@
   .touch-controls {
     bottom: -55px;
     padding: 0 15px;
+    column-gap: 22px;
   }
   
   .direction-controls,
@@ -190,11 +189,7 @@
     height: 56px;
   }
   
-  .control-button.jump {
-    width: 78px;
-    height: 56px;
-    font-size: 11px;
-  }
+  .control-button.jump { width: 110px; height: 62px; font-size: 11px; }
 }
 
 /* Tablets en portrait */
@@ -203,6 +198,7 @@
     display: flex;
     bottom: -80px;
     padding: 0 25px;
+    column-gap: 34px;
   }
   
   .control-button {
@@ -210,10 +206,7 @@
     height: 68px;
   }
   
-  .control-button.jump {
-    width: 90px;
-    height: 68px;
-  }
+  .control-button.jump { width: 150px; height: 82px; }
 }
 
 /* Asegurar tamaño mínimo táctil */
@@ -224,8 +217,8 @@
   }
   
   .control-button.jump {
-    min-width: 78px;
-    min-height: 56px;
+    min-width: 118px;
+    min-height: 66px;
   }
 }
 

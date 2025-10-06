@@ -182,16 +182,16 @@
     overflow-x: hidden !important;
     overflow-y: hidden !important;
     max-width: 100vw;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
+    /* Quitar perspectiva del contenedor raíz para que los elementos con position: fixed (HUD de vidas) se anclen al viewport */
   }
   
   .game-container {
     overflow: visible;
     max-width: 100vw;
+    /* Aplicar aquí el contexto 3D si se requiere para las animaciones internas */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
   }
 }
