@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion';
 import '../styles/ProgressBar.css';
 
@@ -5,7 +6,13 @@ const ProgressBar = ({ current, total }) => {
   const percentage = (current / total) * 100;
 
   return (
-    <div className="progress-container">
+    <motion.div 
+      className="progress-container"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="progress-info">
         <span>Pregunta {current} de {total}</span>
       </div>
@@ -17,7 +24,7 @@ const ProgressBar = ({ current, total }) => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

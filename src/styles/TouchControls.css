@@ -1,69 +1,79 @@
 .touch-controls {
-  position: fixed;
-  bottom: 30px;
+  position: absolute;
   left: 0;
   right: 0;
+  bottom: -75px;
+  width: 100%;
+  max-width: 900px;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
-  z-index: 1000;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 3000;
   pointer-events: none;
+  margin: 0 auto;
 }
 
-.direction-controls,
+.direction-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  pointer-events: auto;
+}
+
 .jump-controls {
   display: flex;
-  gap: 15px;
-  pointer-events: all;
+  gap: 12px;
+  align-items: center;
+  pointer-events: auto;
 }
 
 .control-button {
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  border: 3px solid rgba(135, 206, 235, 0.6);
+  background: rgba(255, 255, 255, 0.98);
+  border: 3px solid rgba(135, 206, 235, 0.85);
+  color: #222;
   font-weight: 700;
-  color: #333;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  user-select: none;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.14s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.14s;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
 .control-button:active {
-  background: rgba(135, 206, 235, 0.9);
-  border-color: #87CEEB;
-  transform: scale(0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(0.92);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .control-button.jump {
-  width: 90px;
-  height: 70px;
-  border-radius: 35px;
-  font-size: 14px;
+  width: 84px;
+  height: 62px;
+  border-radius: 31px;
+  font-size: 12px;
   background: linear-gradient(135deg, #87CEEB, #FF7F7F);
-  color: white;
+  color: #fff;
   border: none;
-  gap: 5px;
   flex-direction: column;
-  box-shadow: 0 4px 20px rgba(255, 127, 127, 0.4);
+  gap: 3px;
+  box-shadow: 0 6px 26px rgba(255, 127, 127, 0.35);
 }
 
 .control-button.jump span {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .control-button.jump:active {
-  background: linear-gradient(135deg, #FF7F7F, #87CEEB);
-  box-shadow: 0 2px 10px rgba(255, 127, 127, 0.5);
+  transform: scale(0.92);
+  box-shadow: 0 3px 12px rgba(255, 127, 127, 0.4);
 }
 
 /* Ocultar en desktop */
@@ -76,252 +86,166 @@
 /* iPhone 13 Pro Max (428x926) */
 @media (min-width: 415px) and (max-width: 430px) and (min-height: 844px) {
   .touch-controls {
-    bottom: max(35px, calc(var(--safe-area-bottom) + 15px));
-    padding: 0 25px;
-  }
-
-  .direction-controls,
-  .jump-controls {
-    gap: 16px;
-  }
-
-  .control-button {
-    width: 72px;
-    height: 72px;
-    background: rgba(255, 255, 255, 0.98);
-    border-width: 4px;
-    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.28);
-  }
-
-  .control-button svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .control-button.jump {
-    width: 92px;
-    height: 72px;
-    font-size: 15px;
-  }
-
-  .control-button.jump span {
-    font-size: 12px;
-  }
-}
-
-/* iPhone 13 / 13 Pro (390x844) */
-@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
-  .touch-controls {
-    bottom: max(32px, calc(var(--safe-area-bottom) + 12px));
+    bottom: -72px;
     padding: 0 22px;
   }
-
-  .direction-controls,
-  .jump-controls {
-    gap: 14px;
-  }
-
-  .control-button {
-    width: 68px;
-    height: 68px;
-    background: rgba(255, 255, 255, 0.98);
-    border-width: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.27);
-  }
-
-  .control-button svg {
-    width: 26px;
-    height: 26px;
-  }
-
-  .control-button.jump {
-    width: 88px;
-    height: 68px;
-    font-size: 14px;
-  }
-
-  .control-button.jump span {
-    font-size: 11px;
-  }
-}
-
-/* iPhone 13 Mini y dispositivos pequeños */
-@media (max-width: 374px) and (min-height: 667px) {
-  .touch-controls {
-    bottom: max(28px, calc(var(--safe-area-bottom) + 10px));
-    padding: 0 18px;
-  }
-
-  .direction-controls,
-  .jump-controls {
-    gap: 12px;
-  }
-
+  
   .control-button {
     width: 64px;
     height: 64px;
-    background: rgba(255, 255, 255, 0.98);
-    border-width: 3px;
   }
-
-  .control-button svg {
-    width: 24px;
-    height: 24px;
+  
+  .control-button.jump {
+    width: 86px;
+    height: 64px;
   }
+}
 
+/* iPhone 13 / 13 Pro (390x844) - OPTIMIZADO */
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 800px) {
+  .touch-controls {
+    bottom: -70px;
+    padding: 0 18px;
+  }
+  
+  .direction-controls,
+  .jump-controls {
+    gap: 11px;
+  }
+  
+  .control-button {
+    width: 62px;
+    height: 62px;
+  }
+  
+  .control-button.jump {
+    width: 84px;
+    height: 62px;
+  }
+}
+
+/* iPhone 13 Mini (375x812) */
+@media (max-width: 374px) and (min-height: 667px) {
+  .touch-controls {
+    bottom: -68px;
+    padding: 0 16px;
+  }
+  
+  .control-button {
+    width: 60px;
+    height: 60px;
+  }
+  
   .control-button.jump {
     width: 82px;
-    height: 64px;
-    font-size: 13px;
-  }
-
-  .control-button.jump span {
-    font-size: 10px;
+    height: 60px;
   }
 }
 
-/* Móviles generales */
+/* Móviles generales en portrait */
 @media (max-width: 768px) and (orientation: portrait) {
   .touch-controls {
-    bottom: max(30px, calc(var(--safe-area-bottom) + 10px));
-    padding: 0 20px;
-  }
-
-  .control-button {
-    width: 65px;
-    height: 65px;
-    background: rgba(255, 255, 255, 0.98);
-    border-width: 4px;
-  }
-
-  .control-button.jump {
-    width: 85px;
-    height: 65px;
-  }
-
-  .control-button.jump span {
-    font-size: 11px;
+    bottom: -70px;
+    padding: 0 18px;
   }
 }
 
-/* Móviles muy pequeños */
+/* Móviles muy pequeños (320px) */
 @media (max-width: 320px) {
   .touch-controls {
-    bottom: max(25px, calc(var(--safe-area-bottom) + 8px));
-    padding: 0 15px;
+    bottom: -65px;
+    padding: 0 14px;
   }
-
+  
   .direction-controls,
   .jump-controls {
     gap: 10px;
   }
-
-  .control-button {
-    width: 58px;
-    height: 58px;
-    border-width: 3px;
-  }
-
-  .control-button svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .control-button.jump {
-    width: 76px;
-    height: 58px;
-    font-size: 12px;
-  }
-
-  .control-button.jump span {
-    font-size: 9px;
-  }
-}
-
-/* Orientación horizontal en móviles */
-@media (max-width: 896px) and (orientation: landscape) {
-  .touch-controls {
-    bottom: max(18px, calc(var(--safe-area-bottom) + 5px));
-    padding: 0 20px;
-  }
-
-  .direction-controls,
-  .jump-controls {
-    gap: 12px;
-  }
-
+  
   .control-button {
     width: 56px;
     height: 56px;
-    border-width: 3px;
   }
-
-  .control-button svg {
-    width: 22px;
-    height: 22px;
-  }
-
+  
   .control-button.jump {
-    width: 75px;
+    width: 78px;
     height: 56px;
-    font-size: 12px;
-  }
-
-  .control-button.jump span {
-    font-size: 10px;
   }
 }
 
-/* Tablets en modo portrait */
+/* Landscape en móviles */
+@media (max-width: 896px) and (orientation: landscape) {
+  .touch-controls {
+    bottom: -55px;
+    padding: 0 15px;
+  }
+  
+  .direction-controls,
+  .jump-controls {
+    gap: 10px;
+  }
+  
+  .control-button {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .control-button.jump {
+    width: 78px;
+    height: 56px;
+    font-size: 11px;
+  }
+}
+
+/* Tablets en portrait */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
   .touch-controls {
     display: flex;
-    bottom: 40px;
-    padding: 0 40px;
-  }
-
-  .control-button {
-    width: 75px;
-    height: 75px;
-  }
-
-  .control-button.jump {
-    width: 95px;
-    height: 75px;
-  }
-}
-
-/* Asegurar que los botones siempre sean táctiles (mínimo 44x44px recomendado por Apple) */
-@media (max-width: 768px) {
-  .control-button {
-    min-width: 58px;
-    min-height: 58px;
-  }
-
-  .control-button.jump {
-    min-width: 76px;
-    min-height: 58px;
-  }
-}
-
-/* Mejorar feedback visual en dispositivos táctiles */
-@media (hover: none) and (pointer: coarse) {
-  .control-button:active {
-    transform: scale(0.88);
-    transition: transform 0.1s ease;
+    bottom: -80px;
+    padding: 0 25px;
   }
   
-  .control-button.jump:active {
-    transform: scale(0.88);
+  .control-button {
+    width: 68px;
+    height: 68px;
+  }
+  
+  .control-button.jump {
+    width: 90px;
+    height: 68px;
   }
 }
 
-/* Prevenir scroll accidental al tocar controles */
+/* Asegurar tamaño mínimo táctil */
+@media (max-width: 768px) {
+  .control-button {
+    min-width: 56px;
+    min-height: 56px;
+  }
+  
+  .control-button.jump {
+    min-width: 78px;
+    min-height: 56px;
+  }
+}
+
+/* Prevenir scroll accidental */
 @media (max-width: 768px) {
   .touch-controls,
   .direction-controls,
   .jump-controls,
   .control-button {
     overscroll-behavior: contain;
+  }
+}
+
+/* Safe areas para iPhone con notch */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .touch-controls {
+      padding-left: max(18px, env(safe-area-inset-left));
+      padding-right: max(18px, env(safe-area-inset-right));
+      padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
   }
 }
